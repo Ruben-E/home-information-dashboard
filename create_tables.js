@@ -1,10 +1,10 @@
 var r = require('rethinkdb');
-var Connection = require('./database/connection');
+var connection = require('./database/connection');
 
-Connection.getConnection().then(function(conn) {
-    console.log("Connection is open" + conn);
+connection.getConnection().then(function(conn) {
+    console.log("Connection is open");
 
-    r.db('test').tableCreate('temperature').run(conn, function(err, result) {
+    r.tableCreate('temperatures').run(conn, function(err, result) {
         if (err) throw err;
     });
 });
