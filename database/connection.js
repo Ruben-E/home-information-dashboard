@@ -1,12 +1,7 @@
-var r = require('rethinkdbdash')();
-
-var connection = null;
+var r = require('rethinkdb');
 
 module.exports = {
     getConnection: function () {
-        return r.connect({host: 'localhost', port: 28015}, function (err, conn) {
-            if (err) throw err;
-            connection = conn;
-        });
+        return r.connect({host: 'localhost', port: 28015});
     }
 };
