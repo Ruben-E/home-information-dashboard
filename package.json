@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "nrf": "0.8.3"
+    "nrf": "0.8.3",
+    "rethinkdbdash": "2.1.17"
   }
 }
