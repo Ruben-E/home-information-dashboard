@@ -8,5 +8,12 @@ connection.getConnection().then(function (conn) {
         if (err) throw err;
 
         console.log('Tables created...');
+        console.log('Creating index on time');
+
+        r.table("users").indexCreate("last_name").run(conn, function(err, result) {
+            if (err) throw err;
+
+            console.log('Index created');
+        })
     });
 });
