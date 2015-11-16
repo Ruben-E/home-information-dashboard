@@ -32,7 +32,8 @@ connection.getConnection().then(function (conn) {
 
                 r.table('temperatures').insert({
                     temperature: temperature,
-                    humidity: humidity
+                    humidity: humidity,
+                    time: new Date()
                 }).run(conn, function (err, result) {
                     if (err) throw err;
                 });
