@@ -28,8 +28,8 @@ connection.getConnection().then(function (conn) {
 
                 var match = matchRegex.exec(dataString);
 
-                var temperature = match[1];
-                var humidity = match[2];
+                var temperature = parseFloat(match[1]);
+                var humidity = parseFloat(match[2]);
 
                 keen.getClient().addEvent('temperatures', {
                         temperature: temperature,
