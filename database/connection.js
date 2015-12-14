@@ -1,5 +1,5 @@
 var r = require('rethinkdb');
-var config = require('./../config');
+var config = require('./../config/config');
 
 module.exports = {
     getConnection: function () {

@@ -13,4 +13,8 @@ config.rethinkdb.username = nconf.get('rethinkdb:username');
 config.rethinkdb.password = nconf.get('rethinkdb:password');
 config.rethinkdb.database = nconf.get('rethinkdb:database');
 
+config.keen = {};
+config.keen.projectId = nconf.get("keen:projectId");
+config.keen.writeKey = nconf.get("keen:writeKey");
+config.keen.readKey = nconf.get("keen:readKey");
 module.exports = config;

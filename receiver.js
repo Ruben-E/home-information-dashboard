@@ -1,6 +1,7 @@
 var radio = require('nrf').connect("/dev/spidev0.0", 22);
 var r = require('rethinkdb');
 var connection = require('./database/connection');
+var keen = require('./keen/keen');
 
 var matchRegex = /^\|(\d+\.?\d*)\|(\d+\.?\d*)\|$/;
 
@@ -29,6 +30,14 @@ connection.getConnection().then(function (conn) {
 
                 var temperature = match[1];
                 var humidity = match[2];
+
+                keen.getClient().addEvent('temperatures', {
+                        temperature: temperature,
+                        humidity: humidity
+                    }, function (err, result) {
+                        if (err) throw err;
+                    }
+                );
 
                 r.table('temperatures').insert({
                     temperature: temperature,
