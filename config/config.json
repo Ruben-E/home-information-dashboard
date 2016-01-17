@@ -1,14 +1,5 @@
 {
-  "rethinkdb": {
-    "host": "localhost",
-    "port": 28015,
-    "username": "",
-    "password": "",
-    "database": "test"
-  },
-  "keen": {
-    "projectId": "",
-    "writeKey": "",
-    "readKey": ""
+  "mqtt": {
+    "host": "mqtt://localhost"
   }
 }
